@@ -1,0 +1,13 @@
+{
+  "name": "02-http",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type":"commonjs",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
