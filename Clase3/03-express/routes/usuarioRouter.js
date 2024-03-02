@@ -44,12 +44,12 @@ router.post('/formulario', encriptar, (req, res) => {
 
 });
 
-router.put('/', (req, res) => {
-    res.send('Hola mundo');
+router.put('/actualizar', (req, res) => {
+    res.send('Actualizando');
 });
 
-router.delete('/', (req, res) => {
-    res.send('Hola mundo');
+router.delete('/borrar', (req, res) => {
+    res.send('Borrando');
 });
 
 module.exports = router;
