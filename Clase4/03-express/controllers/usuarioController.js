@@ -13,6 +13,21 @@ const bienvenida = (req, res) => {
     res.render('index');
 }
 
+const registro = (req, res) => {
+    res.render('registro');
+}
+
+const registrarUsuario = (req, res) => {
+    const {
+        nombre,
+        apellido,
+        email,
+        password 
+    } = req.body;
+    console.log(`Nombre: ${nombre}, Apellido: ${apellido}, Email: ${email}, Password: ${password}`);
+    res.send('Usuario Registrado');
+}
+
 const guardar = (req, res) => {
     
     const nombre = req.body.nombre;
@@ -68,20 +83,26 @@ const template = (req, res) => {
 }
 
 const login = (req, res) => {
-    res.send(`
-        <form action="api/usuarios/login" method="post">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="emmail" aria-describedby="emailHelp">
-            </div>
-        </form>
-    `);
+    res.render('login');
+}
+
+const loginUsuario = (req, res) => {
+    const {
+        email,
+        password 
+    } = req.body;
+    console.log(`Email: ${email}, Password: ${password}`);
+    res.send('Usuario loggeado');
 }
 
 module.exports = {
     descargas,
     home,
     bienvenida,
+    registro,
+    login,
+    registrarUsuario,
+    loginUsuario,
     guardar,
     formulario,
     actualizar,
