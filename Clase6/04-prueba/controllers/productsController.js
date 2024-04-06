@@ -38,21 +38,21 @@ const cargarFormulario = (req, res) => {
 
     //guardamos el producto en un archivo .txt sincronico
     try{
-        fs.appendFileSync('archivos/productosSync.txt', "," + JSON.stringify(producto));
+        fs.appendFileSync('archivos/productosSync.txt', JSON.stringify(producto) + ",");
     }catch(err){
         try{
-            fs.appendFileSync('archivos/error.txt', "," + JSON.stringify(err));
+            fs.appendFileSync('archivos/error.txt', JSON.stringify(err) + ",");
         }catch(e){
             console.log(e);
         }
     }
     
     //guardamos el producto en un archivo .txt asincronico
-    fs.appendFile('archivos2/productosAsync.txt', "," + JSON.stringify(producto), (err) => {
+    fs.appendFile('archivos2/productosAsync.txt', JSON.stringify(producto) + ",", (err) => {
         if(err){
             console.log(err);
             try{
-                fs.appendFileSync('archivos/error.txt', "," + JSON.stringify(err));
+                fs.appendFileSync('archivos/error.txt', JSON.stringify(err) + ",");
             }catch(e){
                 console.log(e);
             }
