@@ -17,7 +17,7 @@ const conectarDB = async () => {
     try{
         await cliente.connect();
         console.log('==================================================================================');
-        console.log('Conexión realizada correctamente');
+        console.log(`Conexión realizada correctamente a ${MONGO_LOCAL}`);
         console.log('==================================================================================');
         const db = await cliente.db('05-connectmongo');
     } catch(error) {

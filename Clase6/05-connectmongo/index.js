@@ -11,15 +11,30 @@ console.log(MONGO_ATLAS);
 
 const cliente = new MongoClient(MONGO_LOCAL);
 
-
+const database = 'educacionit';
 
 const conectarDB = async () => {
     try{
+        //me conecto a la base de datos
         await cliente.connect();
+
+        //selecciono la base de datos
+        const db = cliente.db(database)
+
+        //creamos una coleccion
+        const collection = await db.collection('documents');
+
+        //insertamos un documento
+        collection.insertOne({
+            nombre: 'Pepe',
+            apellido: 'Perez',
+            edad: 25,
+            provincia: 'Buenos Aires'
+        });
+
         console.log('==================================================================================');
-        console.log('Conexión realizada correctamente');
+        console.log(`Conexión realizada correctamente a ${MONGO_LOCAL} - Base de datos: ${database}`);
         console.log('==================================================================================');
-        const db = await cliente.db('05-connectmongo');
     } catch(error) {
         console.log('==================================================================================');
         console.log(`Error en la conexión ${error}`);
