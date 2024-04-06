@@ -1,0 +1,1 @@
+{"errno":-4058,"code":"ENOENT","syscall":"open","path":"C:\\Users\\pablo\\OneDrive\\Documentos\\EducationIT\\Clases\\Clase5\\04-prueba\\archivos2\\productosAsync.txt"}
