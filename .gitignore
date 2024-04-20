@@ -2,4 +2,8 @@
 .env
 
 /node_modules
+*/node_modules
+
 /Uploads
+Clase7/DEPLOYEIT/node_modules/
+Clase8/DEPLOYEIT/node_modules/
