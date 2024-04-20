@@ -1,4 +1,10 @@
 const fs = require('node:fs');
+const conexion = require('../database/conexion.js');
+const MongoClient = require('mongodb').MongoClient;
+const dotenv = require('dotenv').config();
+const MONGO_ATLAS = process.env.MONGO_ATLAS;
+const client = new MongoClient(MONGO_ATLAS); 
+const database = 'educacionit';
 
 const mostrarFormulario = (req, res) => {
     res.render('registroProductos', {
@@ -6,7 +12,7 @@ const mostrarFormulario = (req, res) => {
     })
 }
 
-const cargarFormulario = (req, res) => {
+const cargarFormulario = async (req, res) => {
 
     //desestructuramos los datos del body
     const {
@@ -46,18 +52,25 @@ const cargarFormulario = (req, res) => {
             console.log(e);
         }
     }
+
+    //guardamos los datos en nuestra database de mongo local
+    await client.connect();
+    const db = client.db(database);
+
+    db.collection('documents').insertOne(producto);
+    
     
     //guardamos el producto en un archivo .txt asincronico
-    fs.appendFile('archivos2/productosAsync.txt', JSON.stringify(producto) + ",", (err) => {
-        if(err){
-            console.log(err);
-            try{
-                fs.appendFileSync('archivos/error.txt', JSON.stringify(err) + ",");
-            }catch(e){
-                console.log(e);
-            }
-        }
-    });
+    // fs.appendFile('archivos2/productosAsync.txt', JSON.stringify(producto) + ",", (err) => {
+    //     if(err){
+    //         console.log(err);
+    //         try{
+    //             fs.appendFileSync('archivos/error.txt', JSON.stringify(err) + ",");
+    //         }catch(e){
+    //             console.log(e);
+    //         }
+    //     }
+    // });
 
 
     //enviamos el producto como respuesta de tipo JSON
