@@ -1,6 +1,6 @@
 import app from './app.js';
 import dotenv from 'dotenv';
-import conectarDB from './database/conexion.js';
+import conectarDB from './database/mongooseConect.js';
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;

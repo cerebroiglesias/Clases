@@ -9,6 +9,9 @@ import hbs from 'hbs';
 import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
 import productRouter from './routes/products.js';
+
+//importamos las rutas que utilizan la libreria mongoose
+import mongooseRouter from './routes/mongooseRouter.js';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -32,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productRouter);
+app.use('/productos', mongooseRouter);
 
 //pagina de error
 app.get('*', (req, res) => {

@@ -1,5 +1,5 @@
 {
-  "name": "04-prueba",
+  "name": "deployeit",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -16,6 +16,7 @@
     "http-errors": "~1.6.3",
     "mongodb": "^6.5.0",
     "mongoose": "^8.3.2",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "nodemon": "^3.1.0"
   }
 }
