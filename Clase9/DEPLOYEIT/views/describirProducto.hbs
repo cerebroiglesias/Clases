@@ -1,0 +1,13 @@
+<div class="m-5 text-center">
+    
+    <div class="card d-inline-block m-3" style="width: 18rem">
+        <img src="{{product.imagenProducto}}" class="card-img-top" style="width: 18rem; height: 18rem" alt="...">
+        <div class="card-body">
+            <h5 class="card-title text-capitalize ">{{product.nombreProducto}}</h5>
+            <p class="card-text">Stock: {{product.stockProducto}}</p>
+            <p class="card-text">Precio: ${{product.precioProducto}}</p>
+            <p class="card-text">Fecha de creacion: {{product.timestamp}}</p>
+            <a href="/productos/comprar/{{product.id}}" class="btn btn-success m-1">Comprar</a>
+        </div>
+    </div>
+</div>

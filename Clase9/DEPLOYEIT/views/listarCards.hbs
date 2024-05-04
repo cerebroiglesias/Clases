@@ -1,0 +1,19 @@
+<div class="m-5">
+    <h1 class="m-5 d-block ">{{message}}</h1>
+    <div>
+        {{#each products}}
+            <div class="card d-inline-block m-3" style="width: 18rem">
+                <img src="{{imagenProducto}}" class="card-img-top" style="width: 18rem; height: 18rem" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-capitalize ">{{nombreProducto}}</h5>
+                    <p class="card-text">Stock: {{stockProducto}}</p>
+                    <p class="card-text">Precio: ${{precioProducto}}</p>
+                    <p class="card-text">Fecha de creacion: {{timestamp}}</p>
+                    <a href="/productos/descripcion/{{id}}" class="btn btn-primary m-1">Ver Producto</a>
+                    <a href="/productos/eliminar/{{id}}" class="btn btn-danger m-1">Eliminar Producto</a>
+                    <a href="/productos/actualizar/{{id}}" class="btn btn-warning m-1">Actualizar Producto</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
