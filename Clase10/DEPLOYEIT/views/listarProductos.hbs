@@ -1,0 +1,27 @@
+<div class="m-5">
+    <table class="table table-striped">
+        {{message}}
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha de creación</th>
+                <th scope="col">Imagen Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+            </tr>
+        </thead>
+        <tbody>        
+            {{#each products}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{nombreProducto}}</td>
+                    <td>{{timestamp}}</td>
+                    <td><img src="{{imagenProducto}}" style="width: 18rem; height: 18rem;"></td>
+                    <td>{{precioProducto}}</td>
+                    <td>{{stockProducto}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
